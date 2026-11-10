@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google-site-verification" content="vtMOeC3ju40EuuBketgK1z91J3LotoCkZqFm89Acuns" />
+<title>ARIF RAHAMAN — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#050a10;color:#f4f1e9;font-family:"DM Mono",monospace;overflow-x:hidden}a{color:inherit;text-decoration:none}
+.cursor{position:fixed;z-index:90;width:20px;height:20px;border:1px solid #fff;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:.25s}.cursor.big{width:52px;height:52px;background:#fff}
+.progress{position:fixed;z-index:80;top:0;left:0;width:100%;height:2px;background:#fff;transform-origin:left;transform:scaleX(0)}
+.loader{position:fixed;inset:0;z-index:100;background:#071019;display:grid;place-items:center;transition:.8s}.loader.hide{opacity:0;visibility:hidden}.load{width:min(300px,70vw);font-size:10px;letter-spacing:.15em}.loadtop{display:flex;justify-content:space-between;margin-bottom:12px}.line{height:1px;background:#ffffff30}.fill{height:100%;width:0;background:#fff;animation:load 1.2s forwards}@keyframes load{to{width:100%}}
+
+#scene{position:fixed;inset:0;z-index:0;overflow:hidden;background:#071019}
+#bg{position:absolute;inset:-2%;width:104%;height:104%;object-fit:cover;object-position:center center;filter:brightness(.72) contrast(1.08) saturate(.92);will-change:transform;opacity:1;transition:opacity 1.2s ease}.loaded{opacity:1}
+#shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,8,14,.75) 0%,rgba(3,8,14,.25) 45%,rgba(3,8,14,.20) 100%),linear-gradient(0deg,rgba(3,8,14,.70) 0%,transparent 32%,rgba(3,8,14,.25) 100%);pointer-events:none}
+#scene:after{content:"";position:absolute;inset:0;opacity:.055;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+main{position:relative;z-index:2}.hero{height:100svh;min-height:650px;position:relative}
+header{position:absolute;z-index:10;top:3.5%;left:3.6%;right:3.6%;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.14em}.brand{display:flex;align-items:center;width:38px;height:38px}.brand img{display:block;width:34px;height:34px;object-fit:contain;}.nav{display:flex;gap:25px}.nav a{position:relative;padding-bottom:5px}.nav a:after{content:"";position:absolute;bottom:0;left:0;width:0;height:1px;background:#fff;transition:.3s}.nav a:hover:after{width:100%}
+.hero-copy{position:absolute;z-index:8;left:6.6%;top:27.8%;width:66%;max-width:1200px}.eyebrow{font-size:11px;letter-spacing:.28em;margin-bottom:17px}.name{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(78px,11.7vw,190px);line-height:.82;letter-spacing:-.065em;margin:0;white-space:nowrap}.name span{display:block;transform:translateY(110%);animation:rise 1s cubic-bezier(.16,1,.3,1) .75s forwards}.name span+span{animation-delay:.85s}@keyframes rise{to{transform:none}}
+.tag{margin-top:38px;font-size:12px;line-height:1.8;letter-spacing:.13em}.tag b{font-weight:400;opacity:.52}.side{position:absolute;z-index:8;right:2.65%;top:50%;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;letter-spacing:.29em;opacity:.72}
+.meta{position:absolute;z-index:8;left:3.6%;right:3.6%;bottom:4%;display:flex;justify-content:space-between;align-items:end;font-size:9px;letter-spacing:.17em}.scroll{display:flex;align-items:center;gap:14px}.scroll i{display:block;width:58px;height:1px;background:#fff}
+
+.panel{min-height:100svh;position:relative;padding:13vh 7vw;display:flex;align-items:center;background:transparent}.panel:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#050a1010,#050a1085 55%,#050a10bd);opacity:0;transition:opacity 1s}.panel.active:before{opacity:1}
+.content{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 1.15fr;gap:8vw;align-items:center}.num{font-size:10px;letter-spacing:.2em;opacity:.55}.title{font-family:"Playfair Display",serif;font-size:clamp(64px,9vw,150px);font-weight:500;line-height:.85;letter-spacing:-.055em;margin:20px 0}.lead{font-size:clamp(18px,2.2vw,31px);line-height:1.45;max-width:720px}.small{font-size:11px;line-height:2;letter-spacing:.08em;color:#c3c5c4;max-width:600px}.reveal{opacity:0;transform:translateY(65px);transition:1s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:none}
+.about-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}.about-facts span{border:1px solid #ffffff35;padding:10px 13px;font-size:9px;letter-spacing:.14em;opacity:.72}.contact-block{max-width:760px}.contact-links{margin-top:38px;border-top:1px solid #ffffff35}.contact-link{display:grid;grid-template-columns:58px 1fr 30px;align-items:center;min-height:68px;border-bottom:1px solid #ffffff35;transition:padding .35s,background .35s}.contact-link:hover{padding-left:14px;background:#07101945}.contact-link span{font-size:9px;letter-spacing:.16em;opacity:.55}.contact-link b{font-family:"Playfair Display",serif;font-size:clamp(20px,2vw,30px);font-weight:500;letter-spacing:-.02em}.contact-link i{font-style:normal;font-size:18px;opacity:.65;transition:transform .3s}.contact-link:hover i{transform:translate(4px,-4px)}.contact-icon{width:28px;height:28px;display:grid;place-items:center;opacity:.78}.contact-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}.linkedin-icon svg{fill:currentColor;stroke:none}.contact-link:hover .contact-icon{opacity:1;transform:scale(1.08);transition:transform .3s,opacity .3s}
+.project-list{width:100%;border-top:1px solid #ffffff35}.project-row{min-height:92px;border-bottom:1px solid #ffffff35;display:grid;grid-template-columns:55px 1fr 170px 30px;align-items:center;gap:18px;transition:padding .4s,background .4s}.project-row:hover{padding-left:16px;padding-right:8px;background:#07101945}.project-row b{font-family:"Playfair Display",serif;font-size:clamp(25px,3vw,44px);font-weight:500;letter-spacing:-.025em}.project-index,.project-type{font-size:9px;letter-spacing:.15em;opacity:.58}.project-arrow{font-size:20px;opacity:.65;transition:transform .3s}.project-row:hover .project-arrow{transform:translate(4px,-4px)}
+footer{position:relative;z-index:3;padding:6vh 4vw;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;background:#04080ddd}.links{display:flex;gap:25px}
+@media(max-width:700px){
+.cursor{display:none}.hero{min-height:620px}.nav{gap:14px}.nav a{font-size:9px}.nav a:nth-child(2){display:none}
+header{top:22px;left:6%;right:6%}.brand{width:34px;height:34px}.brand img{width:31px;height:31px}
+.hero-copy{left:7%;top:30%;width:86%}.eyebrow{font-size:9px;letter-spacing:.24em;margin-bottom:13px}.name{font-size:19vw;line-height:.84;letter-spacing:-.07em;white-space:normal}.tag{margin-top:25px;font-size:8px;line-height:1.75;letter-spacing:.11em}.side{right:3%;top:47%;font-size:7px;letter-spacing:.23em}.meta{left:7%;right:7%;bottom:28px;font-size:7px;letter-spacing:.12em}.scroll{gap:8px}.scroll i{width:28px}.location{display:none}
+.panel{min-height:100svh;padding:16vh 7vw 11vh}.content{grid-template-columns:1fr;gap:8vh}.title{font-size:20vw;line-height:.86;margin:16px 0}.lead{font-size:19px;line-height:1.42}.small{font-size:9px;line-height:1.9}.about-facts{margin-top:25px;gap:7px}.about-facts span{padding:8px 9px;font-size:7px}
+.project-row{grid-template-columns:30px 1fr 25px;min-height:72px;gap:8px}.project-type{display:none}.project-row b{font-size:6.6vw}.project-index{font-size:8px}.project-arrow{font-size:16px}
+.contact-links{margin-top:28px}.contact-link{grid-template-columns:46px 1fr 22px;min-height:60px}.contact-link b{font-size:17px}.contact-icon{width:25px;height:25px}.contact-icon svg{width:22px;height:22px}
+footer{padding:7vh 7vw;flex-direction:column;gap:18px;font-size:8px}.links{gap:18px}
+}
+@media(max-width:380px){.hero-copy{top:28%}.name{font-size:18.5vw}.tag{font-size:7.5px}.panel{padding-top:14vh}.lead{font-size:17px}.title{font-size:19vw}.contact-link b{font-size:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.loader,.reveal,.name span{animation:none!important;transition:none!important}.name span{transform:none}.bg{transform:none!important}}
+
+</style>
+</head>
+<body>
+<div class="loader"><div class="load"><div class="loadtop"><span>AR / PORTFOLIO</span><span>2026</span></div><div class="line"><div class="fill"></div></div></div></div>
+<div class="progress"></div><div class="cursor"></div>
+<div id="scene"><img id="bg" src="assets/arif-hero.jpg" alt=""><div id="shade"></div></div>
+
+<main>
+<section class="hero" id="home">
+<header><a class="brand magnetic" href="#home" aria-label="Arif Rahaman home"><img src="assets/ar-monogram.png" alt="AR"></a><nav class="nav" aria-label="Main navigation"><a class="magnetic" href="#about">ABOUT</a><a class="magnetic" href="#education">EDUCATION</a><a class="magnetic" href="#projects">PROJECTS</a><a class="magnetic" href="#contact">CONTACT</a></nav></header>
+<div class="hero-copy"><div class="eyebrow">HELLO, I'M</div><h1 class="name"><span>ARIF</span><span>RAHAMAN</span></h1><div class="tag">IDEAS / CODE / GROW / REPEAT<br><b>A BETTER VERSION EVERYDAY</b></div></div>
+<div class="side">SAME SKY / BIGGER DREAMS</div>
+<div class="meta"><span>INDIA&nbsp;&nbsp;/&nbsp;&nbsp;EST. 2025</span><span class="scroll"><i></i>SCROLL TO EXPLORE</span><span class="location">TURNING CURIOSITY INTO OPPORTUNITIES.</span></div>
+</section>
+
+<section class="panel" id="about"><div class="content">
+<div class="reveal"><div class="num">01 / ABOUT</div><h2 class="title">WHO<br>AM I?</h2></div>
+<div class="reveal"><p class="lead">I'm Arif — a computer science student, curious builder, and someone who enjoys turning ideas into things that feel useful, simple and alive.</p><p class="small">I'm constantly learning, experimenting and improving. I like exploring technology, building projects from scratch, and figuring out how an idea can become something real. For me, progress is less about knowing everything and more about becoming better every day.</p><div class="about-facts"><span>CURIOUS BY DEFAULT</span><span>BUILD / LEARN / REPEAT</span><span>ALWAYS EXPLORING</span></div></div>
+</div></section>
+
+<section class="panel" id="education"><div class="content">
+<div class="reveal"><div class="num">02 / EDUCATION</div><h2 class="title">MY<br>JOURNEY.</h2></div>
+<div class="reveal project-list">
+<div class="project-row"><span class="project-index">01</span><b>B.TECH — COMPUTER SCIENCE & ENGINEERING</b><span class="project-type">SISTER NIVEDITA UNIVERSITY</span><span class="project-arrow">•</span></div>
+<div class="project-row"><span class="project-index">02</span><b>HIGHER SECONDARY & SCHOOLING</b><span class="project-type">KENDRIYA VIDYALAYA BIRBHUM</span><span class="project-arrow">•</span></div>
+</div>
+</div></section>
+
+<section class="panel" id="projects"><div class="content">
+<div class="reveal"><div class="num">03 / PROJECTS</div><h2 class="title">THINGS<br>I BUILD.</h2><p class="small">A selection of projects I've worked on while learning and experimenting with software development.</p></div>
+<div class="reveal project-list">
+<div class="project-row"><span class="project-index">01</span><b>PROJECT 1</b><span class="project-type">COMING SOON</span><span class="project-arrow">•</span></div>
+<div class="project-row"><span class="project-index">02</span><b>PROJECT 2</b><span class="project-type">COMING SOON</span><span class="project-arrow">•</span></div>
+</div>
+</div></section>
+
+<section class="panel" id="contact"><div class="content">
+<div class="reveal"><div class="num">04 / CONTACT</div><h2 class="title">LET'S<br>TALK.</h2></div>
+<div class="reveal contact-block"><p class="lead">Have an idea, a project, or an opportunity? I'd love to hear about it.</p><p class="small">Whether it's building something from scratch, collaborating on an idea, or simply starting a conversation — send me a message.</p><div class="contact-links"><a class="contact-link magnetic" href="mailto:arifrahaman3270@gmail.com" aria-label="Email Arif Rahaman"><span class="contact-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="m4 7 8 6 8-6"></path></svg></span><b>EMAIL</b><i>↗</i></a><a class="contact-link magnetic" href="https://www.instagram.com/arif___rahaman/" target="_blank" rel="noopener" aria-label="Instagram — @arif___rahaman"><span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.6" cy="6.5" r="1"></circle></svg></span><b>INSTAGRAM</b><i>↗</i></a><a class="contact-link magnetic" href="https://in.linkedin.com/in/arif-rahaman-8b083b293" target="_blank" rel="noopener" aria-label="LinkedIn — Arif Rahaman"><span class="contact-icon linkedin-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8.2V19H2.5V8.2H5ZM3.75 4.8a1.45 1.45 0 1 1 0 2.9 1.45 1.45 0 0 1 0-2.9ZM8 8.2h2.4v1.48h.04c.33-.63 1.14-1.83 3.2-1.83 3.42 0 4.06 2.25 4.06 5.18V19h-2.5v-5.28c0-1.26-.02-2.88-1.75-2.88-1.75 0-2.02 1.37-2.02 2.79V19H8V8.2Z"></path></svg></span><b>LINKEDIN</b><i>↗</i></a></div></div>
+</div></section>
+<footer><span>© 2026 ARIF RAHAMAN</span><div class="links"><a href="#home">BACK TO TOP</a><a href="#contact">CONTACT</a></div></footer>
+</main>
+
+<script>
+const bg=document.getElementById('bg'),progress=document.querySelector('.progress'),cursor=document.querySelector('.cursor');
+bg.addEventListener('load',()=>bg.classList.add('loaded'));
+
+let tx=0,ty=0,cx=0,cy=0;
+if(matchMedia('(pointer:fine)').matches){
+ addEventListener('mousemove',e=>{tx=(e.clientX/innerWidth-.5)*2;ty=(e.clientY/innerHeight-.5)*2;cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'},{passive:true});
+ document.querySelectorAll('a,.project').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('big'));el.addEventListener('mouseleave',()=>cursor.classList.remove('big'))});
+ document.querySelectorAll('.magnetic').forEach(el=>{
+   el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(); const x=(e.clientX-r.left-r.width/2)*.10; const y=(e.clientY-r.top-r.height/2)*.10; el.style.transform=`translate(${x}px,${y}px)`});
+   el.addEventListener('mouseleave',()=>el.style.transform='');
+ });
+}
+let rafPending=false;
+function animate(){
+ const max=document.documentElement.scrollHeight-innerHeight,p=max?scrollY/max:0;
+ cx+=(tx-cx)*.035;cy+=(ty-cy)*.035;
+ // Home position remains the reference composition. Movement is intentionally subtle after scrolling.
+ const y=-p*34, x=cx*-8, scale=1.02+p*.045;
+ bg.style.transform=`translate3d(${x}px,${y+cy*-4}px,0) scale(${scale})`;
+ progress.style.transform=`scaleX(${p})`;
+ requestAnimationFrame(animate)
+}animate();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.closest('.panel')?.classList.add('active')}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+addEventListener('load',()=>setTimeout(()=>document.querySelector('.loader').classList.add('hide'),1400));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'})}}));
+</script>
+</body>
+</html>
